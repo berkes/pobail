@@ -1,0 +1,28 @@
+<div class="contextual">
+  <%= link_to 'Show', @user %> |
+  <%= link_to 'Back', users_path %>
+</div>
+<h2>Editing user</h2>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+  
+  <p><%= label_tag 'login' %><br/>
+  <%= f.text_field :login %></p>
+
+  <p><%= label_tag 'email' %><br/>
+  <%= f.text_field :email %></p>
+
+
+  <fieldset>
+    <legend>Password:</legend>
+    <p><%= label_tag 'password' %><br/>
+    <%= f.password_field :password %></p>
+
+    <p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+    <%= f.password_field :password_confirmation %></p>
+  </fieldset>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

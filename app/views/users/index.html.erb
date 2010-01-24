@@ -1,0 +1,21 @@
+<div class="contextual">
+  <%= link_to 'New user', new_user_path %>
+</div>
+<h2>Listing users</h2>
+
+<table>
+   <th>login</th>
+   <th>real name</th>
+   <th>email</th>
+   <th colspan='2'>Operations</th>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.login, user %></td>
+    <td><%= h user.name %></td>
+    <td><%= h user.email %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
