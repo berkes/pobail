@@ -62,6 +62,8 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
+    
+    # @TODO: if user == myself, then log out afterwards.
     @user.delete!
     redirect_to users_path  
   end
