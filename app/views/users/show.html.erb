@@ -2,12 +2,12 @@
   <%= link_to 'Edit', edit_user_path() %> |
   <%= link_to 'Back', users_path %>
 </div>
-<h2><%= h @login %></h2>
+<h2><%= h @user.login %></h2>
 
 
 <p><%= label_tag 'login' %><br/>
-<%= h @login %></p>
+<%= h @user.login %></p>
 
 <p><%= label_tag 'email' %><br/>
-<%= h @email %></p>
+<%= h @user.email %></p>
 
