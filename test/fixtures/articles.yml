@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: Haaarrr
+  body: This text will show as a body text. It may contain some <br /> HTML, but mostly just plain text.
+        Oh, and an enter
+  published: true
+  author: 2
+
+two:
+  title: All ye posts avast
+  body: Lets fire another piece of text in our database. 
+        That way, we can see how a second post appears online!
+  published: false
+  author: 2
+  
+two:
+  title: But Drupal can do Testing too!
+  body: why does it sound so familiar? “oh! let’s bolt on support for running tests because they’re new and   cool” http://bit.ly/d4ekQE
+  published: true
+  author: 1
