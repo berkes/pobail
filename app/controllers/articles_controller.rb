@@ -9,6 +9,14 @@ class ArticlesController < ApplicationController
       format.xml  { render :xml => @articles }
     end
   end
+  
+  # GET /articles/tag/slick #slick = a tagname
+  # GET /articles/tag/slick.xml
+  def tag
+    @articles = Article.tagged_with(params[:id]).by_join_date
+
+    render :index
+  end
 
   # GET /articles/1
   # GET /articles/1.xml

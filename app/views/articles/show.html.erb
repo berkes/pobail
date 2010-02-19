@@ -9,6 +9,15 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <ul>
+  <% @article.tags.each do |tag| %>
+    <li><%= link_to tag , { :action => :tag, :id => tag.name } %></li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
   <b>Published:</b>
   <%=h @article.published %>
 </p>

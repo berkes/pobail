@@ -1,3 +1,6 @@
 class Article < ActiveRecord::Base
-  acts_as_taggable_on :filed_under
+  validates_presence_of :title
+
+  acts_as_taggable_on :tags
+  named_scope :by_join_date, :order => "created_at DESC"
 end
