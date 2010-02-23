@@ -14,7 +14,7 @@ class ArticlesControllerTest < ActionController::TestCase
 
   test "should create article" do
     assert_difference('Article.count') do
-      post :create, :article => { }
+      post :create, :article => {:title => 'Foo', :body => 'bar'  }
     end
 
     assert_redirected_to article_path(assigns(:article))

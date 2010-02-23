@@ -14,8 +14,8 @@ two:
   published: false
   author: 2
   
-two:
+three:
   title: But Drupal can do Testing too!
-  body: why does it sound so familiar? “oh! let’s bolt on support for running tests because they’re new and   cool” http://bit.ly/d4ekQE
+  body: why does it sound so familiar? “oh! let’s bolt on support for running tests because they’re new and cool” http://bit.ly/d4ekQE
   published: true
   author: 1
