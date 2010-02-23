@@ -6,7 +6,13 @@ class ArticlesControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:articles)
   end
-
+  
+  test "should get tag" do
+    get :tag
+    assert_response :success
+    assert_not_nil assigns(:articles)
+  end
+  
   test "should get new" do
     get :new
     assert_response :success
