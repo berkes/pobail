@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  # Be sure to include AuthenticationSystem in Application Controller instead
+  include AuthenticatedSystem
+
   # GET /articles
   # GET /articles.xml
   def index
