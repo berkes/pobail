@@ -13,4 +13,30 @@ class ArticleTest < ActiveSupport::TestCase
     assert !article.save, "Saved the article with an empty body"
   end
   
+  
+  # Tag tests
+  def test_should_save_new_tags
+    article = Article.find(1)
+    article.tag_list = "parrot, bird"
+    assert article.save, "Failed to save new tags"
+  end
+  
+  def test_should_add_tags
+    article = Article.find(1)
+    article.tag_list = "parrot, bird"
+    article.save
+    article.tag_list = "parrot, bird, animal"
+    article.save
+    assert article.tags.count == 3, "Article should have three tag"
+  end
+  
+  def test_should_remove_tags
+    article = Article.find(1)
+    article.tag_list = "parrot, bird"
+    article.save
+    article.tag_list = "parrot"
+    article.save
+    assert article.tags.count == 1, "Article should have one tag"
+  end
+
 end
