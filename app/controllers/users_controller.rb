@@ -1,9 +1,6 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
   # Protect these actions behind an admin login
-  before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge, :index]
+  require_role "admin", :for => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
   
 
@@ -117,9 +114,5 @@ class UsersController < ApplicationController
 protected
   def find_user
     @user = User.find(params[:id])
-  end
-  
-  def admin_required
-    current_user.respond_to?('is_admin') && current_user.send('is_admin')
   end
 end

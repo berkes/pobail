@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
-
+  require_role "admin", :for_all_except => [ :index, :tag, :show ]
   # GET /articles
   # GET /articles.xml
   def index

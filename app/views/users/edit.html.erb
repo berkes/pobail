@@ -3,7 +3,7 @@
   <%= link_to 'Back', users_path %>
 </div>
 <h2>Editing user</h2>
-
+<%= debug(@user.roles) %>
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
   
@@ -22,6 +22,18 @@
     <p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
     <%= f.password_field :password_confirmation %></p>
   </fieldset>
+  
+  <p><%= label_tag 'roles' %><br/>
+  <%= f.collection_select(
+    :roles, 
+    Role.find(:all),
+    :id,
+    :name,
+    {},
+    :multiple => true,
+	  :name => 'user[role_ids][]'
+	) %></p>
+  
   <p>
     <%= f.submit 'Update' %>
   </p>
