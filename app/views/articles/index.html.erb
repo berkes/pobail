@@ -1,4 +1,8 @@
-<h1>Listing articles</h1>
+<h1>Listing articles
+<% if @tag %>
+   in <%=h @tag %>
+<% end %>
+</h1>
 
 <table>
   <tr>

@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
   # GET /articles/tag/slick.xml
   def tag
     @articles = Article.tagged_with(params[:id]).by_join_date
+    @tag = params[:id]
 
     render :index
   end
