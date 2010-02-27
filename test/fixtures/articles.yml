@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   title: Haaarrr
   body: This text will show as a body text. It may contain some <br /> HTML, but mostly just plain text.
         Oh, and an enter
@@ -8,6 +9,7 @@ one:
   author: 2
 
 two:
+  id: 2
   title: All ye posts avast
   body: Lets fire another piece of text in our database. 
         That way, we can see how a second post appears online!
@@ -15,7 +17,9 @@ two:
   author: 2
   
 three:
+  id: 3
   title: But Drupal can do Testing too!
   body: why does it sound so familiar? “oh! let’s bolt on support for running tests because they’re new and cool” http://bit.ly/d4ekQE
   published: true
   author: 1
+  
