@@ -40,6 +40,14 @@ class User < ActiveRecord::Base
     u && u.authenticated?(password) ? u : nil
   end
 
+
+  #TODO: we should actually only run this status check for users whose uname/pw are correct. 
+  def self.waiting?(login)
+    return nil if login.blank?
+    u = find :first, :conditions => {:login => login.downcase}
+    return u && u.state = :active ? TRUE : FALSE
+  end
+  
   def login=(value)
     write_attribute :login, (value ? value.downcase : nil)
   end
